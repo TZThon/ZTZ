@@ -25,7 +25,7 @@ StartTime = time.time()
 zedversion = "3.3.2"
 
 if Config.UPSTREAM_REPO == "zel":
-    UPSTREAM_REPO_URL = "https://github.com/Zilzalll/ZThon"
+    UPSTREAM_REPO_URL = "https://github.com/ZThon-Ar/ZTZ"
 else:
     UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
 
