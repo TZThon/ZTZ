@@ -44,11 +44,11 @@ if Config.ZELZAL_A:
             plugin_to_install = documentss[module].id
             plugin_name = documentss[module].file.name
             if plugin_name.endswith(".py"):
-                if os.path.exists(f"zira/plugins/{plugin_name}"):
+                if os.path.exists(f"zelz/plugins/{plugin_name}"):
                     return
                 downloaded_file_name = await zedub.download_media(
                     await zedub.get_messages(Config.ZELZAL_A, ids=plugin_to_install),
-                    "zira/plugins/",
+                    "zelz/plugins/",
                 )
                 path1 = Path(downloaded_file_name)
                 shortname = path1.stem
