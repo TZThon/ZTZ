@@ -5,7 +5,7 @@ import re
 from telethon.events import CallbackQuery
 from telethon.tl.functions.users import GetUsersRequest
 
-from zira import zedub
+from zelz import zedub
 from ..sql_helper.globals import gvarstatus
 
 
@@ -18,8 +18,8 @@ async def on_plug_in_callback_query_handler(event):
         zzz = await zedub.get_entity(ussr)
     except ValueError:
         zzz = await zedub(GetUsersRequest(ussr))
-    if os.path.exists("./zira/secret.txt"):
-        jsondata = json.load(open("./zira/secret.txt"))
+    if os.path.exists("./zelz/secret.txt"):
+        jsondata = json.load(open("./zelz/secret.txt"))
         try:
             message = jsondata[f"{timestamp}"]
             userid = message["userid"]
