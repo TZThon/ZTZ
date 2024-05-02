@@ -3,7 +3,7 @@ import importlib
 import sys
 from pathlib import Path
 
-from zira import CMD_HELP, LOAD_PLUG
+from zelz import CMD_HELP, LOAD_PLUG
 
 from ..Config import Config
 from ..core import LOADED_CMDS, PLG_INFO
@@ -21,17 +21,17 @@ def load_module(shortname, plugin_path=None):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        path = Path(f"zira/plugins/{shortname}.py")
+        path = Path(f"zelz/plugins/{shortname}.py")
         checkplugins(path)
-        name = "zira.plugins.{}".format(shortname)
+        name = "zelz.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         LOGS.info(f"Successfully imported {shortname}")
     else:
         if plugin_path is None:
-            path = Path(f"zira/plugins/{shortname}.py")
-            name = f"zira.plugins.{shortname}"
+            path = Path(f"zelz/plugins/{shortname}.py")
+            name = f"zelz.plugins.{shortname}"
         else:
             path = Path((f"{plugin_path}/{shortname}.py"))
             name = f"{plugin_path}/{shortname}".replace("/", ".")
@@ -58,7 +58,7 @@ def load_module(shortname, plugin_path=None):
         mod.borg = zedub
         spec.loader.exec_module(mod)
         # for imports
-        sys.modules[f"zira.plugins.{shortname}"] = mod
+        sys.modules[f"zelz.plugins.{shortname}"] = mod
         LOGS.info(f"Successfully imported {shortname}")
 
 
@@ -82,7 +82,7 @@ def remove_plugin(shortname):
             zedub.remove_event_handler(i)
         del LOAD_PLUG[shortname]
     try:
-        name = f"zira.plugins.{shortname}"
+        name = f"zelz.plugins.{shortname}"
         for i in reversed(range(len(zedub._event_builders))):
             ev, cb = zedub._event_builders[i]
             if cb.__module__ == name:
