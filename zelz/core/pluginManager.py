@@ -17,8 +17,8 @@ github_patern = re.compile(r"(?:https?)?(?:www.)?(?:github.com/)?([\w\-.]+/[\w\-
 github_raw_pattern = re.compile(
     r"(?:https?)?(?:raw.)?(?:githubusercontent.com/)?([\w\-.]+/[\w\-.]+)/?"
 )
-trees_pattern = "https://api.github.com/repos/{}/git/trees/zira"
-raw_pattern = "https://raw.githubusercontent.com/{}/zira/{}"
+trees_pattern = "https://api.github.com/repos/{}/git/trees/zelz"
+raw_pattern = "https://raw.githubusercontent.com/{}/zelz/{}"
 
 LOGS = logging.getLogger(__name__)
 
@@ -76,7 +76,7 @@ async def restart_script(client: TelegramClient, sandy):
     except Exception as e:
         LOGS.error(e)
     executable = sys.executable.replace(" ", "\\ ")
-    args = [executable, "-m", "zira"]
+    args = [executable, "-m", "zelz"]
     os.execle(executable, *args, os.environ)
     os._exit(143)
 
