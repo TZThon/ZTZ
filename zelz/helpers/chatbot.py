@@ -3,8 +3,8 @@ import re
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest as unblock
 
-from zira import zedub
-from zira.helpers.functions import delete_conv
+from zelz import zedub
+from zelz.helpers.functions import delete_conv
 
 from ..sql_helper.globals import addgvar, gvarstatus
 
