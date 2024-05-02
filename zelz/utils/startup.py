@@ -1,4 +1,4 @@
-# ZThon - zira
+# ZThon
 # Copyright (C) 2022 ZThon . All Rights Reserved
 #< https://t.me/ZThon >
 # This file is a part of < https://github.com/Zed-Thon/ZelZal/ >
@@ -25,7 +25,7 @@ from telethon import Button, functions, types, utils
 from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.tl.functions.contacts import UnblockRequest
 
-from zira import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
+from zelz import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
 
 from ..Config import Config
 from ..core.logger import logging
@@ -41,7 +41,7 @@ from .pluginmanager import load_module
 from .tools import create_supergroup
 
 ENV = bool(os.environ.get("ENV", False))
-LOGS = logging.getLogger("zira")
+LOGS = logging.getLogger("zelz")
 cmdhr = Config.COMMAND_HAND_LER
 Zed_Vip = (1895219306, 6269975462, 6550930943, 5993018048, 5809896714, 1985225531, 6886550001, 925972505, 6038435721, 5746412340, 1762269116, 6272130846, 1052790413, 6055956182, 5059075331, 6669333713, 6328317500, 5616315677, 6227985448, 232499688, 6608224162, 1719023510, 6748495865, 6612882807, 6093001360, 6470835326)
 zchannel = {"@zthon", "@zed_thon", "@zzzlvv", "@zzzvrr", "@AAAl1l", "@RR_U_RR", "@zzzzI1l", "@zzzzzl1I", "@z_zzz8", "@uzz_zz", "@zzkrr", "@zzclll", "@llu_uII", "@X_P_3", "@RRRDB", "@ZThon_Add", "@heroku_error", "@DD_Dii", "@zz_zii", "@AA_Auu", "@RR_Rww", "@ZThon1", "@MMM07", "@My1mind1"}
@@ -158,7 +158,7 @@ async def mybot(): #Code by T.me/zzzzl1l
             await asyncio.sleep(1)
             await bot.send_message("@BotFather", botname)
             await asyncio.sleep(1)
-            await bot.send_file("@BotFather", "zira/zilzal/logozed.jpg")
+            await bot.send_file("@BotFather", "zelz/zilzal/logozed.jpg")
             await asyncio.sleep(3)
             await bot.send_message("@BotFather", "/setabouttext")
             await asyncio.sleep(1)
@@ -262,8 +262,8 @@ async def load_plugins(folder, extfolder=None):
         path = f"{extfolder}/*.py"
         plugin_path = extfolder
     else:
-        path = f"zira/{folder}/*.py"
-        plugin_path = f"zira/{folder}"
+        path = f"zelz/{folder}/*.py"
+        plugin_path = f"zelz/{folder}"
     files = glob.glob(path)
     files.sort()
     success = 0
@@ -385,7 +385,7 @@ async def verifyLoggerGroup():
         flag = True
     if flag:
         executable = sys.executable.replace(" ", "\\ ")
-        args = [executable, "-m", "zira"]
+        args = [executable, "-m", "zelz"]
         os.execle(executable, *args, os.environ)
         sys.exit(0)
 
@@ -416,4 +416,4 @@ async def install_externalrepo(repo, branch, cfolder):
         )
     if os.path.exists(rpath):
         await runcmd(f"pip3 install --no-cache-dir -r {rpath}")
-    await load_plugins(folder="zira", extfolder=cfolder)
+    await load_plugins(folder="zelz", extfolder=cfolder)
