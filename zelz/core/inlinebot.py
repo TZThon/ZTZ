@@ -10,7 +10,7 @@ from telethon import Button, types, version
 from telethon.errors import QueryIdInvalidError
 from telethon.events import CallbackQuery, InlineQuery
 from youtubesearchpython import VideosSearch
-from zira import zedub, zedversion, StartTime
+from zelz import zedub, zedversion, StartTime
 from ..Config import Config
 from ..helpers.functions import rand_key, zedalive, check_data_base_heal_th, get_readable_time
 from ..helpers.functions.utube import download_button, get_yt_video_id, get_ytthumb, result_formatter, ytsearch_data
@@ -95,7 +95,7 @@ async def inline_handler(event):  # sourcery no-metrics
                     user_list.append(u.id)
                     sandy += " "
                 sandy = sandy[:-1]
-            old_msg = os.path.join("./zira", f"{info_type[0]}.txt")
+            old_msg = os.path.join("./zelz", f"{info_type[0]}.txt")
             try:
                 jsondata = json.load(open(old_msg))
             except Exception:
