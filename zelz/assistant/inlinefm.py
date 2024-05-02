@@ -9,11 +9,11 @@ from telethon import Button, types
 from telethon.events import CallbackQuery
 from telethon.utils import get_attributes
 
-from zira import zedub
-from zira.Config import Config
-from zira.core.decorators import check_owner
-from zira.helpers import humanbytes, progress
-from zira.helpers.utils import _zedutils
+from zelz import zedub
+from zelz.Config import Config
+from zelz.core.decorators import check_owner
+from zelz.helpers import humanbytes, progress
+from zelz.helpers.utils import _zedutils
 
 CC = []
 PATH = []  # using list method for some reason
