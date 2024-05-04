@@ -79,7 +79,7 @@ video_opts = {
 }
 
 @zedub.zed_cmd(
-    pattern="صوتيه(320)?(?:\s|$)([\s\S]*)",
+    pattern="بحث(320)?(?:\s|$)([\s\S]*)",
     command=("بحث", plugin_category),
     info={
         "header": "لـ تحميـل الاغـانـي مـن يـوتيـوب",
