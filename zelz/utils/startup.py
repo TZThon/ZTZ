@@ -65,17 +65,24 @@ DEV = 1895219306
 
 
 async def autovars(): #Code by T.me/zzzzl1l
-    if "ENV" in heroku_var:
+    if "ENV" in heroku_var and "TZ" in heroku_var:
         return
-    LOGS.info("جـارِ اضافـة بقيـة الفـارات .. تلقائيـاً")
-    zzenv = "ANYTHING"
-    zzcom = "."
-    zzztz = "Asia/Baghdad"
-    heroku_var["ENV"] = zzenv
-    heroku_var["COMMAND_HAND_LER"] = zzcom
-    heroku_var["TZ"] = zzztz
-    LOGS.info("تم اضافـة بقيـة الفـارات .. بنجـاح")
-
+    if "ENV" in heroku_var and "TZ" not in heroku_var:
+        LOGS.info("جـارِ اضافـة بقيـة الفـارات .. تلقائيـاً")
+        zzcom = "."
+        zzztz = "Asia/Baghdad"
+        heroku_var["COMMAND_HAND_LER"] = zzcom
+        heroku_var["TZ"] = zzztz
+        LOGS.info("تم اضافـة بقيـة الفـارات .. بنجـاح")
+    if "ENV" not in heroku_var and "TZ" not in heroku_var:
+        LOGS.info("جـارِ اضافـة بقيـة الفـارات .. تلقائيـاً")
+        zzenv = "ANYTHING"
+        zzcom = "."
+        zzztz = "Asia/Baghdad"
+        heroku_var["ENV"] = zzenv
+        heroku_var["COMMAND_HAND_LER"] = zzcom
+        heroku_var["TZ"] = zzztz
+        LOGS.info("تم اضافـة بقيـة الفـارات .. بنجـاح")
 
 async def autoname(): #Code by T.me/zzzzl1l
     if Config.ALIVE_NAME:
