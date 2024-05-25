@@ -4,7 +4,7 @@
 from telethon import functions
 from telethon.errors import ChatAdminRequiredError, UserAlreadyInvitedError
 from telethon.tl.types import Channel, Chat, User
-from zira import zedub
+from zelz import zedub
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import mentionuser
 
