@@ -20,11 +20,11 @@ def decrypt_session(zelzal_dev): #Write Code By @zzzzl1l - @ZThon
     return zz_sess
 
 #Write Code By @zzzzl1l - @ZThon
-if zzz_session and "ZTHON" in zzz_session:
+if zzz_session and "ZTHON" in zzz_session.encode("utf-8"):
     zelzal_dev = zzz_session.replace("ZTHON", "")
     ZThon_Session = decrypt_session(zelzal_dev)
     session = bothseesion(ZThon_Session, LOGS)
-elif zzz_session and "ZTHON" not in zzz_session:
+elif zzz_session and "ZTHON" not in zzz_session.encode("utf-8"):
     session = bothseesion(ZThon_Session, LOGS)
 else:
     session = "zelzal"
