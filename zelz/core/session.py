@@ -1,5 +1,6 @@
 import sys
 import base64
+import os
 
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.errors import AccessTokenExpiredError, AccessTokenInvalidError
@@ -13,6 +14,11 @@ __version__ = "2.10.6"
 
 loop = None
 zzz_session = Config.STRING_SESSION
+
+if type(zzz_session) == bytes:
+    zzz_session = zzz_session.decode("utf-8")
+else:
+    zzz_session = Config.STRING_SESSION
 
 #Write Code By @zzzzl1l - @ZThon
 def decrypt_session(zelzal_dev): #Write Code By @zzzzl1l - @ZThon
