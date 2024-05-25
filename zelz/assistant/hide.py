@@ -10,8 +10,8 @@ from zelz import zedub
 @zedub.tgbot.on(CallbackQuery(data=re.compile(b"hide_(.*)")))
 async def on_plug_in_callback_query_handler(event):
     timestamp = int(event.pattern_match.group(1).decode("UTF-8"))
-    if os.path.exists("./zira/hide.txt"):
-        jsondata = json.load(open("./zira/hide.txt"))
+    if os.path.exists("./zelz/hide.txt"):
+        jsondata = json.load(open("./zelz/hide.txt"))
         try:
             reply_pop_up_alert = jsondata[f"{timestamp}"]["text"]
         except KeyError:
