@@ -1,6 +1,4 @@
 import sys
-import base64
-import os
 
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.errors import AccessTokenExpiredError, AccessTokenInvalidError
@@ -10,28 +8,12 @@ from .client import ZedUserBotClient
 from .logger import logging
 
 LOGS = logging.getLogger("زدثــون")
-__version__ = "2.10.6"
+__version__ = "3.10.3"
 
 loop = None
-zzz_session = Config.STRING_SESSION
 
-if type(zzz_session) == bytes:
-    zzz_session = zzz_session.decode("utf-8")
-else:
-    zzz_session = Config.STRING_SESSION
-
-#Write Code By @zzzzl1l - @ZThon
-def decrypt_session(zelzal_dev): #Write Code By @zzzzl1l - @ZThon
-    zz_sess = base64.b64decode(zelzal_dev)
-    return zz_sess
-
-#Write Code By @zzzzl1l - @ZThon
-if zzz_session and "ZTHON" in zzz_session.encode("utf-8"):
-    zelzal_dev = zzz_session.replace("ZTHON", "")
-    ZThon_Session = decrypt_session(zelzal_dev)
-    session = bothseesion(ZThon_Session, LOGS)
-elif zzz_session and "ZTHON" not in zzz_session.encode("utf-8"):
-    session = bothseesion(ZThon_Session, LOGS)
+if Config.STRING_SESSION:
+    session = bothseesion(Config.STRING_SESSION, LOGS)
 else:
     session = "zelzal"
 
