@@ -7,7 +7,7 @@ import logging
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 from telethon.tl.types import User
-from zira import zedub
+from zelz import zedub
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 
