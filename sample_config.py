@@ -138,7 +138,7 @@ class Config(object):
     # For transfer channel 2 step verification code of telegram
     TG_2STEP_VERIFICATION_CODE = os.environ.get("TG_2STEP_VERIFICATION_CODE", None)
     # JustWatch Country for watch plugin
-    WATCH_COUNTRY = os.environ.get("WATCH_COUNTRY", "IN")
+    WATCH_COUNTRY = os.environ.get("WATCH_COUNTRY", "IQ")
     # Last.fm plugin  https://telegra.ph/Guide-for-LASTFM-02-03
     BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
     LASTFM_API = os.environ.get("LASTFM_API", None)
@@ -179,7 +179,7 @@ class Config(object):
     COUNTRY = str(os.environ.get("COUNTRY", ""))
     TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
     # For updater plugin
-    UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "master")
+    UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "ZThon-Ar")
     # dont touch this at all
     SUDO_USERS: Set[int] = set()
     ZEDUBLOGO = None
@@ -187,9 +187,9 @@ class Config(object):
     BOTLOG_CHATID = 0
     # extra plugins realted vars below  4
     EXTERNAL_REPOBRANCH = os.environ.get("EXTERNAL_REPOBRANCH", "main")
-    OLDZED_REPO = os.environ.get("OLDZED_REPO", "https://github.com/Zed-Thon/ZED_USERBOT")
+    OLDZED_REPO = os.environ.get("OLDZED_REPO", "https://github.com/ZThon-Ar/ZTZ")
     if OLDZED_REPO and not url(OLDZED_REPO):
-        OLDZED_REPO = "https://github.com/Zed-Thon/ZED_USERBOT"
+        OLDZED_REPO = "https://github.com/ZThon-Ar/ZTZ"
     OLDZED_REPOBRANCH = os.environ.get("OLDZED_REPOBRANCH", "oldzed")
     VC_REPO = os.environ.get("VC_REPO", "https://github.com/Zed-Thon/ZVCPlayer")
     VC_REPOBRANCH = os.environ.get("VC_REPOBRANCH", "zvcplayer")
