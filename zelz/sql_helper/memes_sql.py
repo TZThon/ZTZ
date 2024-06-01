@@ -22,9 +22,6 @@ class ZThonMemes(BASE):
 ZThonMemes.__table__.create(bind=SESSION.get_bind(), checkfirst=True)
 
 
-get_all_memes = SESSION.query(ZThonMemes).all()
-
-
 def get_alll_memes():
     try:
         return SESSION.query(ZThonMemes).all()
