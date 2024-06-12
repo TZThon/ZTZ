@@ -4,6 +4,7 @@
     "addons": ["scalingo-postgresql"],
     "keywords": ["zthon", "userbot","scalingo"],
     "repository": "https://github.com/ZThon-Ar/ZTZ",
+    "stack": "container",
     "buildpacks": [
       {
         "url": "https://github.com/Scalingo/python-buildpack"
