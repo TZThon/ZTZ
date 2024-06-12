@@ -4,6 +4,7 @@
     "addons": ["scalingo-postgresql"],
     "keywords": ["zthon", "userbot","scalingo"],
     "repository": "https://github.com/ZThon-Ar/ZTZ/tree/New",
+    "stack": "container",
     "env": {
         "ALIVE_NAME": {
             "description": "اســم حســـابك التلـي",
