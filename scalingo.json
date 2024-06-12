@@ -3,7 +3,7 @@
     "description": "افضـل سـورسـات تليثـون يـوزربـوت العربيـة : › عربـي بالكـامل › تحديثـات متواصـله › مبنـي ع آخـر اصـدار مـن لغـة بايثـون",
     "addons": ["scalingo-postgresql"],
     "keywords": ["zthon", "userbot","scalingo"],
-    "repository": "https://github.com/ZThon-Ar/ZTZ#New",
+    "repository": "https://github.com/ZThon-Ar/ZTZ",
     "buildpacks": [
       {
         "url": "https://github.com/Scalingo/python-buildpack"
