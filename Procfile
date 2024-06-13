@@ -1,1 +1,1 @@
-web: bash zthon.sh
+worker: bash zthon.sh
