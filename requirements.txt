@@ -75,6 +75,5 @@ youtube-search-python==1.4.9
 youtube-search
 youtube_dl
 yt-dlp==2024.4.9
-
-git+https://github.com/buddhhu/img2html.git
-git+https://github.com/sandy1709/py-googletrans
+img2html
+googletrans-py
