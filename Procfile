@@ -1,1 +1,1 @@
-worker: bash zthon.sh
+worker: python3 -m zelz
