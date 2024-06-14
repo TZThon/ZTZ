@@ -1,6 +1,6 @@
-FROM ahmedhhhhhgg/ztz:slim-buster
+FROM ztscalingo/ztz:slim-buster
 
-RUN git clone https://github.com/Ahmedhhhhhgg/ZTZ.git /root/zelz
+RUN git clone https://github.com/ZTScalingo/ZTZ.git /root/zelz
 
 WORKDIR /root/zelz
 
