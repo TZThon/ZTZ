@@ -40,7 +40,7 @@ opentele
 Pillow
 prettytable
 psutil
-psycopg2
+psycopg2-binary
 py-tgcalls==2.0.2
 pyfiglet
 PyGithub
