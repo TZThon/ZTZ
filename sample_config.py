@@ -187,7 +187,7 @@ class Config(object):
     BOTLOG_CHATID = 0
     # extra plugins realted vars below  4
     EXTERNAL_REPOBRANCH = os.environ.get("EXTERNAL_REPOBRANCH", "main")
-    OLDZED_REPO = os.environ.get("OLDZED_REPO", "https://github.com/Ahmedhhhhhgg/ZTZ")
+    OLDZED_REPO = os.environ.get("OLDZED_REPO", "https://github.com/ZTScalingo/ZTZ")
     if OLDZED_REPO and not url(OLDZED_REPO):
         OLDZED_REPO = "https://github.com/ZThon-Ar/ZTZ"
     OLDZED_REPOBRANCH = os.environ.get("OLDZED_REPOBRANCH", "oldzed")
