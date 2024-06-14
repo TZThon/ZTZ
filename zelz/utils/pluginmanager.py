@@ -15,10 +15,7 @@ from ..helpers.utils import _zedtools, _zedutils, _format, install_pip, reply_id
 from .decorators import admin_cmd, sudo_cmd
 
 LOGS = logging.getLogger("Zelzal")
-inst_done = "✅ تـم تنصيب سـورس زدثــون .. بنجـاح ⌔\n♥️ قم بالذهاب الى تيليجـرام الان ⌔\n💡 ثم ارسـل الامـر ( .مساعده ) ⌔"
-innst_done = "\033[1;31m✅ تـم تنصيب سـورس زدثــون .. بنجـاح ⌔\n\033[1;31m♥️ قم بالذهاب الى تيليجـرام الان ⌔\n\033[1;31m💡 ثم ارسـل الامـر ( .مساعده ) ⌔"
-insst_done = "\033[1m✅ تـم تنصيب سـورس زدثــون .. بنجـاح ⌔\n\033[1m♥️ قم بالذهاب الى تيليجـرام الان ⌔\n\033[1m💡 ثم ارسـل الامـر ( .مساعده ) ⌔"
-
+inst_done = "✅ تـم تنصيب سـورس زدثــون .. بنجـاح ⌔\n💡 ثم ارسـل الامـر ( .مساعده ) ⌔\n♥️ قم بالذهاب الى تيليجـرام الان ⌔"
 
 def load_module(shortname, plugin_path=None):
     if shortname.startswith("__"):
@@ -63,6 +60,51 @@ def load_module(shortname, plugin_path=None):
         # for imports
         sys.modules[f"zelz.plugins.{shortname}"] = mod
         LOGS.info(f"Successfully imported {shortname}")
+
+
+def lload_module(shortname, plugin_path=None):
+    if shortname.startswith("__"):
+        pass
+    elif shortname.endswith("_"):
+        path = Path(f"zelz/plugins/{shortname}.py")
+        checkplugins(path)
+        name = "zelz.plugins.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        print("Successfully imported library")
+    else:
+        if plugin_path is None:
+            path = Path(f"zelz/plugins/{shortname}.py")
+            name = f"zelz.plugins.{shortname}"
+        else:
+            path = Path((f"{plugin_path}/{shortname}.py"))
+            name = f"{plugin_path}/{shortname}".replace("/", ".")
+        checkplugins(path)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        mod.bot = zedub
+        mod.LOGS = LOGS
+        mod.Config = Config
+        mod._format = _format
+        mod.tgbot = zedub.tgbot
+        mod.sudo_cmd = sudo_cmd
+        mod.CMD_HELP = CMD_HELP
+        mod.reply_id = reply_id
+        mod.admin_cmd = admin_cmd
+        mod._zedutils = _zedutils
+        mod._zedtools = _zedtools
+        mod.media_type = media_type
+        mod.edit_delete = edit_delete
+        mod.install_pip = install_pip
+        mod.parse_pre = _format.parse_pre
+        mod.edit_or_reply = edit_or_reply
+        mod.logger = logging.getLogger(shortname)
+        mod.borg = zedub
+        spec.loader.exec_module(mod)
+        # for imports
+        sys.modules[f"zelz.plugins.{shortname}"] = mod
+        print("Successfully imported library")
 
 
 def remove_plugin(shortname):
