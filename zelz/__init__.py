@@ -25,15 +25,6 @@ tbot = tgbot
 StartTime = time.time()
 zedversion = "3.3.2"
 
-
-def close_connection(*_):
-    print("تم اغلاق الاتصال بالسورس")
-    runasync(zedub.disconnect())
-    sys.exit(143)
-
-
-signal.signal(signal.SIGTERM, close_connection)
-
 UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
 
 if Config.PRIVATE_GROUP_BOT_API_ID == 0:
