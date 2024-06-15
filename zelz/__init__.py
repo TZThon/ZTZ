@@ -12,7 +12,7 @@ from .helpers.functions.musictool import *
 from .helpers.utils.utils import runasync
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
-__version__ = "3.3.2"
+__version__ = "3.3.3"
 __license__ = "حقـوق سـورس زدثــون"
 __author__ = "زدثــون <https://T.me/ZThon>"
 __copyright__ = "ZThon Source (C) 2020 - 2024  " + __author__
@@ -22,7 +22,8 @@ LOGS = logging.getLogger("زدثــون")
 bot = zedub
 
 StartTime = time.time()
-zedversion = "3.3.2"
+zedversion = "3.3.3"
+ALIVE_NAME = gvarstatus("ALIVE_NAME") if gvarstatus("ALIVE_NAME") else "لا يوجد"
 
 if Config.UPSTREAM_REPO == "zel":
     UPSTREAM_REPO_URL = "https://github.com/ZThon-Ar/ZTZ"
