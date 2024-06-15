@@ -30,7 +30,7 @@ LOGS = logging.getLogger(__name__)
 
 
 @zedub.zed_cmd(
-    pattern="cur(?:\\\s|$)([\\\s\\\S]*)",
+    pattern="cur(?:\\s|$)([\\s\\S]*)",
     command=("cur", plugin_category),
     info={
         "header": "To convert one currency value to other.",
