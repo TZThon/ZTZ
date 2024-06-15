@@ -5,11 +5,20 @@ from telethon import functions
 from .Config import Config
 from .core.logger import logging
 from .core.session import zedub
-from .utils import mybot, saves
+from .utils import mybot, saves, autoname
 from .utils import add_bot_to_logger_group, load_plugins, setup_bot, startupmessage, verifyLoggerGroup
+from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
 LOGS = logging.getLogger("Zelzal")
 cmdhr = Config.COMMAND_HAND_LER
+
+if gvarstatus("ALIVE_NAME") is None: #Code by T.me/zzzzl1l
+    try:
+        LOGS.info("⌭ بـدء إضافة الاسـم التلقـائـي ⌭")
+        zedub.loop.run_until_complete(autoname())
+        LOGS.info("✓ تـم إضافة فار الاسـم .. بـنجـاح ✓")
+    except Exception as e:
+        LOGS.error(f"- The AutoName {e}")
 
 try:
     LOGS.info("⌭ بـدء تنزيـل زدثــون ⌭")
