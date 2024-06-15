@@ -23,7 +23,7 @@ bot = zedub
 
 StartTime = time.time()
 zedversion = "3.3.3"
-ALIVE_NAME = gvarstatus("ALIVE_NAME") if gvarstatus("ALIVE_NAME") else "لا يوجد"
+ALIVE_NAME = gvarstatus("ALIVE_NAME") if gvarstatus("ALIVE_NAME") else ""
 
 if Config.UPSTREAM_REPO == "zel":
     UPSTREAM_REPO_URL = "https://github.com/ZThon-Ar/ZTZ"
