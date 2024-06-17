@@ -1,6 +1,6 @@
-FROM ztscalingo/ztz:slim-buster
+FROM python:latest
 
-RUN git clone https://github.com/ZTScalingo/ZTZ.git /root/zelz
+RUN git clone https://github.com/ZThon-fr/ZTZ.git /root/zelz
 
 WORKDIR /root/zelz
 
