@@ -1,6 +1,6 @@
 FROM python:latest
 
-RUN git clone https://github.com/TheZThon/ZTZ.git /root/zelz
+RUN git clone https://github.com/TZThon/ZTZ.git /root/zelz
 
 WORKDIR /root/zelz
 
