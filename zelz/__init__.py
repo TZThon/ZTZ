@@ -8,7 +8,6 @@ from .Config import Config
 from .core.logger import logging
 from .core.session import zedub
 from .helpers.functions.converter import Convert
-from .helpers.functions.musictool import *
 from .helpers.utils.utils import runasync
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
@@ -25,7 +24,7 @@ StartTime = time.time()
 zedversion = "3.3.3"
 
 if Config.UPSTREAM_REPO == "zel":
-    UPSTREAM_REPO_URL = "https://github.com/ZThon-Ar/ZTZ"
+    UPSTREAM_REPO_URL = "https://github.com/TheZThon/ZTZ"
 else:
     UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
 
